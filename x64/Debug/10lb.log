@@ -1,0 +1,5 @@
+﻿  z3.c
+C:\Users\vlora\source\repos\10lb\10lb\z3.c(66,61): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+C:\Users\vlora\source\repos\10lb\10lb\z3.c(66,64): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+C:\Users\vlora\source\repos\10lb\10lb\z3.c(66,67): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+  10lb.vcxproj -> C:\Users\vlora\source\repos\10lb\x64\Debug\10lb.exe
