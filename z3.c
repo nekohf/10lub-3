@@ -1,47 +1,14 @@
-#define M_PI 3.14159265358979323846 
-#define _USE_MATH_DEFINES 
-#define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <math.h> 
 #include <locale.h>
 
-void print_title() 
-{ 
-    printf("=====================================\n"); 
-    printf(" ПРОГРАММА: ПРЯМОУГОЛЬНАЯ ТРАПЕЦИЯ\n");
-    printf("=====================================\n"); }
+void print_title();
 
-float area_trap(float a, float b, float c) { 
-    return (a + b) / 2 * c; 
-}
-void draw_trap(int a, int b, int c, char d) 
-{ 
-    int s = b - c; 
-    for (int i = 0; i < a; i++) { 
-        int len = c + (a > 1 ? (i * s) / (a - 1) : 0); 
-        if (i == a - 1) len = b; 
-        for (int j = 0; j < b; j++) { 
-            if (j == 0 || (i == 0 && j < c) || (i == a - 1) || (j < len)) { 
-                printf("%c", d); 
-            } 
-            else { 
-                printf(" "); 
-            } 
-        } printf("\n"); 
-    } 
-}
-
-int get_top(int a, int b, double c) 
-{ 
-    return b - (int)(a / tan(c * M_PI / 180.0)); 
-}
-
-int compare_trap(float a, float b) 
-{ 
-    return (int)(a - b); 
-}
-
+float area_trap(float a, float b, float c);
+void draw_trap(int a, int b, int c, char d);
+int get_top(int a, int b, double c);
+int compare_trap(float a, float b);
 int main() {
     setlocale(LC_CTYPE, "RUS");
     char c;
@@ -105,4 +72,40 @@ int main() {
     } while (1);
 
     return 0;
+}
+void print_title()
+{
+    printf("=====================================\n");
+    printf(" ПРОГРАММА: ПРЯМОУГОЛЬНАЯ ТРАПЕЦИЯ\n");
+    printf("=====================================\n");
+}
+
+float area_trap(float a, float b, float c) {
+    return (a + b) / 2 * c;
+}
+void draw_trap(int a, int b, int c, char d)
+{
+    int s = b - c;
+    for (int i = 0; i < a; i++) {
+        int len = c + (a > 1 ? (i * s) / (a - 1) : 0);
+        if (i == a - 1) len = b;
+        for (int j = 0; j < b; j++) {
+            if (j == 0 || (i == 0 && j < c) || (i == a - 1) || (j < len)) {
+                printf("%c", d);
+            }
+            else {
+                printf(" ");
+            }
+        } printf("\n");
+    }
+}
+
+int get_top(int a, int b, double c)
+{
+    return b - (int)(a / tan(c * M_PI / 180.0));
+}
+
+int compare_trap(float a, float b)
+{
+    return (int)(a - b);
 }
